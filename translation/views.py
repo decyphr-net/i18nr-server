@@ -20,7 +20,7 @@ class TranslationViewset(viewsets.ViewSet):
             except:
                 return Response(
                     data={"message": "Files seem to be update to date"},
-                    status=status.HTTP_400_BAD_REQUEST,
+                    status=status.HTTP_200_OK,
                 )
             new_structure = map_to_source_dict(
                 diffed_dict, serializer.data["original_text"]
